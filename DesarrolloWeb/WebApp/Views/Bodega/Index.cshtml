@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApp.Bodega>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Bodegas</h2>
+
+    <p>
+        @Html.ActionLink("Crear Nueva Bodega", "Create")
+    </p>
+    <table class="table" id="grid">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" title="Ver Productos en Bodega" href="~/Inventario/productosxbodega/@item.CodBodega"><span class="fa fa-shopping-basket"></span></a>
+                        <a class="btn btn-info" title="Editar Bodega" href="~/Bodega/edit/@item.CodBodega"><span class="fa fa-edit"></span></a>
+                        <a class="btn btn-danger" title="Eliminar Bodega" href="~/Bodega/Delete/@item.CodBodega"><span class="fa fa-book"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>

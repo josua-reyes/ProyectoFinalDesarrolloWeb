@@ -1,0 +1,83 @@
+﻿@model WebApp.Factura
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bodega.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bodega.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CodFactura }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

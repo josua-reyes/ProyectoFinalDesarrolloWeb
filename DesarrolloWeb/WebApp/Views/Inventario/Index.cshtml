@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApp.Inventario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inventario</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Existencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaActualizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bodega.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Existencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaActualizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bodega.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Nombre)
+        </td>
+        <td>
+            <a class="btn btn-success" title="Ver Inventario" href="~/Inventario/Details/@item.CodInventario"><span class="fa fa-shopping-basket"></span></a>
+            <a class="btn btn-info" title="Editar Inventario" href="~/Inventario/edit/@item.CodInventario"><span class="fa fa-edit"></span></a>
+            <a class="btn btn-danger" title="Eliminar Inventario" href="~/Inventario/Delete/@item.CodInventario"><span class="fa fa-book"></span></a>
+        </td>
+    </tr>
+}
+
+</table>

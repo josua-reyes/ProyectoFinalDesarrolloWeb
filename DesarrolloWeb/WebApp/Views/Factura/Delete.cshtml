@@ -1,0 +1,89 @@
+﻿@model WebApp.Factura
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Esta seguro de Delete el registro?</h3>
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bodega.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bodega.Nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index")
+        </div>
+    }
+</div>

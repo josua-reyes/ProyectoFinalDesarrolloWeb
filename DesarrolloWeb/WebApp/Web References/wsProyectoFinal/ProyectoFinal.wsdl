@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ProductoIndex">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductoIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductoIndexResult" type="tns:ArrayOfProductoIndexDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductoIndexDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductoIndexDTO" nillable="true" type="tns:ProductoIndexDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductoIndexDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION_PRODUCTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EXISTENCIA" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION_CLASE_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION_UNIDAD_MEDIDA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProductoIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductoIndex" />
+  </wsdl:message>
+  <wsdl:message name="ProductoIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductoIndexResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProyectoFinalSoap">
+    <wsdl:operation name="ProductoIndex">
+      <wsdl:input message="tns:ProductoIndexSoapIn" />
+      <wsdl:output message="tns:ProductoIndexSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProyectoFinalSoap" type="tns:ProyectoFinalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProductoIndex">
+      <soap:operation soapAction="http://tempuri.org/ProductoIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProyectoFinalSoap12" type="tns:ProyectoFinalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProductoIndex">
+      <soap12:operation soapAction="http://tempuri.org/ProductoIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProyectoFinal">
+    <wsdl:port name="ProyectoFinalSoap" binding="tns:ProyectoFinalSoap">
+      <soap:address location="https://localhost:44390/ProyectoFinal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProyectoFinalSoap12" binding="tns:ProyectoFinalSoap12">
+      <soap12:address location="https://localhost:44390/ProyectoFinal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

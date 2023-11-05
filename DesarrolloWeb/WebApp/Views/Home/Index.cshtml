@@ -1,0 +1,190 @@
+﻿@*@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>*@
+
+
+@{
+    ViewBag.Title = "Index";
+
+
+}
+<style type="text/css">
+    .panel .panel-heading a {
+        color: white;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="~/bodega">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-building fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Sucursales</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="~/Bodega">
+                <div class="panel-footer">
+                    <span class="pull-left">Reporte de Sucursales</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <a href="~/Producto">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-tv fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Productos</div>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+            <a href="~/Producto">
+                <div class="panel-footer">
+                    <span class="pull-left">Inventario de Productos</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+     <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <a href="~/Movimiento">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-sign-out fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Movimientos</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="~/Movimiento">
+                <div class="panel-footer">
+                    <span class="pull-left">Nuevo Pedido</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <a href="~/Factura">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <i class="fa fa-car fa-5x"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="huge">Rutas</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="~/Factura">
+                <div class="panel-footer">
+                    <span class="pull-left">Reporte de Rutas</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+@*@{
+    ViewBag.Title = "ReporteVentas";
+}
+<h2>Ventas Recientes</h2>
+
+<table class="table">
+    <thead>
+        <tr class="bg-primary">
+            <th>Id Venta</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Vendedor</th>
+            <th>IVA</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objVenta in Model)
+            {
+            <tr>
+                <td>@objVenta.IdVenta</td>
+                <td>@objVenta.IdCliente</td>
+                <td>@objVenta.Fecha</td>
+                <td>@objVenta.IdVendedor</td>
+                <td>@objVenta.Iva</td>
+                <td>@objVenta.Total</td>
+
+                <td><a class="btn btn-success" href="~/Venta/DetallesVenta/@objVenta.IdVenta"><span class="glyphicon glyphicon-eye-open"></span>|Ver Detalles</a></td>
+                <td><a class="btn btn-info" href="~/Cliente/Update/@objVenta.IdVenta"><span class="fa fa-edit"></span>|Editar</a></td>
+                <td><a class="btn btn-danger" href="~/Cliente/Eliminar/@objVenta.IdVenta"><span class="glyphicon glyphicon-remove">|Eliminar</span></a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>*@
+
+
+
+

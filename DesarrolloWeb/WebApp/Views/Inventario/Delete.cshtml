@@ -1,0 +1,65 @@
+﻿@model WebApp.Inventario
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Esta seguro de Delete el registro?</h3>
+<div>
+    <h4>Inventario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Existencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Existencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActualizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaActualizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bodega.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bodega.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.Nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index")
+        </div>
+    }
+</div>

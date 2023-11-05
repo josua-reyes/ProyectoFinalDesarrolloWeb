@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Principal- Panaderia San Carlos</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->
+    <link href="~/Assets/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Css/sb-admin-2.css" rel="stylesheet" />
+    <!-- Morris Charts CSS -->
+    <link href="~/Assets/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-home fa-fw"></i> INICIO
+                    </a>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-home fa-fw"></i> QUIENES SOMOS
+                    </a>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            @Html.Partial("_LoginPartial")
+                        </li>
+
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <img src="~/Img/Logo.jpg" width="225" height="225" alt="Logo" style="align-content:center center"/>
+                        </li>
+                        <li>
+                            <a href="~/"><i class="fa fa-home fa-fw"></i> Principal</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bars"></i> Mantenimientos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Producto Clase</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Empleados</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Puestos</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Sucursales</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Rutas</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Unidades de Medida</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Tipos de Turno</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Estados de Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bodega"><i class="fa fa-angle-double-right" style="color:#f0ad4e"></i>Empresas</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="~/Cliente/Index"><i class="fa fa-shopping-basket"></i>Productos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="~/Producto"><i class="fa fa-check fa-fw" style="color:#f0ad4e"></i>Inventario de Productos</a>
+                                </li>
+                                <li>
+                                    <a href="~/Producto"><i class="fa fa-list fa-fw" style="color:#f0ad4e"></i>Recetas</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="~/Movimiento"><i class="fa fa-sign-out"></i>Movimientos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="~/Movimiento/Index"><i class="fa fa-search fa-fw" style="color:#f0ad4e"></i>Buscar Pedido</a>
+                                </li>
+                                <li>
+                                    <a href="~/Movimiento/Create"><i class="fa fa fa-cube" style="color:#f0ad4e"></i>Agregar Pedido</a>
+                                </li>
+                                <li>
+                                    <a href="~/Movimiento/Create"><i class="fa fa-sign-in" style="color:#f0ad4e"></i>Procesar Pedido</a>
+                                </li>
+                                <li>
+                                    <a href="~/Movimiento/Create"><i class="fa fa-car" style="color:#f0ad4e"></i>Enviar Pedido</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i>Facturas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+
+                                <li>
+                                    <a href="~/Factura/Create"><i class="fa fa-shopping-cart fa-fw" style="color:#f0ad4e"></i>Nueva Factura</a>
+                                </li>
+                                <li>
+                                    <a href="~/Factura"><i class="fa fa-info-circle fa-fw" style="color:#f0ad4e"></i>Detalle Facturas</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper">
+            <!-- /.row -->
+
+            <div class="row">
+                @RenderBody()
+            </div>
+
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Assets/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Assets/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+
+    <script src="~/Assets/morrisjs/morris.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Js/sb-admin-2.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#grid').DataTable({
+                "language": {
+                    "search": "Buscar:",
+                    "lengthMenu": "Mostar _MENU_ Registros por pagina",
+                    "info": "Mostrar _PAGE_ de _PAGES_ paginas",
+                    "paginate": {
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }, "lengthMenu": [[10, 20, 50, -1], [10, 25, 50, "Todos"]]
+            })
+
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

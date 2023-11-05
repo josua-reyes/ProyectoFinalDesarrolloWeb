@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApp.Inventario>
+
+@{
+    ViewBag.Title = "ProductosXBodega";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Productos Por Bodega</h2>
+
+
+<table class="table" id="grid">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Existencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaActualizacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                Nombre Bodega
+            </th>
+            <th>
+                Nombre Producto
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Existencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaActualizacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bodega.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                </td>
+                <td>
+                    <a class="btn btn-success" title="Detalles Producto en Inventario" href="~/Inventario/Details/@item.CodInventario"><span class="glyphicon glyphicon-eye-open"></span></a>
+                    <a class="btn btn-info" title="Editar Producto en Inventario" href="~/Inventario/Edit/@item.CodInventario"><span class="fa fa-edit"></span></a>
+                    <a class="btn btn-danger" title="Eliminar Producto en Inventario" href="~/Inventario/Delete/@item.CodInventario"><span class="fa fa-book"></span></a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

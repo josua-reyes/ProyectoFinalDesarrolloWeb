@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TalentoDigital.wsProyectoFinal.ProductoIndexDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Producto</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table" id="grid">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.COD_PRODUCTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION_PRODUCTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EXISTENCIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION_CLASE_PRODUCTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION_UNIDAD_MEDIDA)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.COD_PRODUCTO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPCION_PRODUCTO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EXISTENCIA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPCION_CLASE_PRODUCTO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPCION_UNIDAD_MEDIDA)
+                </td>
+                <td>
+                    <a class="btn btn-success" title="Ver Productos en Bodega" href="~/Inventario/productosxbodega/@item.ID_PRODUCTO"><span class="fa fa-shopping-basket"></span></a>
+                    <a class="btn btn-info" title="Editar Producto" href="~/Inventario/Edit/@item.ID_PRODUCTO"><span class="fa fa-edit"></span></a>
+                    <a class="btn btn-danger" title="Eliminar Producto" href="~/Inventario/Delete/@item.ID_PRODUCTO"><span class="fa fa-book"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

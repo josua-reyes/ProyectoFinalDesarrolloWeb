@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="631fb5eac9154f78ac1835f8fa14e457" Name="Diagram1">
+        <EntityTypeShape EntityType="dbFacturasModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.AspNetRoles" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.AspNetUserClaims" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.AspNetUserLogins" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.AspNetUsers" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.Bodega" Width="1.5" PointX="1.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.Factura" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.FacturaDetalle" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.Inventario" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.Movimiento" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.MovimientoDetalle" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFacturasModel.Producto" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="dbFacturasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_Factura_Bodega" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_Inventario_Bodega" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_Movimiento_Bodega" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_FacturaDetalle_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_FacturaDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_Inventario_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_MovimientoDetalle_Movimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.FK_MovimientoDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFacturasModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

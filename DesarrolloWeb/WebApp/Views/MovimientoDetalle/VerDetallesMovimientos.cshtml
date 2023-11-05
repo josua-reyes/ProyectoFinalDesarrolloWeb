@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebApp.MovimientoDetalle>
+
+@{
+    ViewBag.Title = "VerDetallesMovimientos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ver Detalles Movimientos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table" id="grid">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movimiento.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movimiento.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                </td>
+                <td>
+                    <a class="btn btn-success" title="Ver Detalle Movimiento" href="~/MovimientoDetalle/Details/@item.CodMovimientoDetalle"><span class="fa fa-shopping-basket"></span></a>
+                    <a class="btn btn-info" title="Editar Detalle Movimiento" href="~/MovimientoDetalle/Edti/@item.CodMovimientoDetalle"><span class="fa fa-edit"></span></a>
+                    <a class="btn btn-danger" title="Eliminar Detalle Movimiento" href="~/MovimientoDetalle/Delete/@item.CodMovimientoDetalle"><span class="fa fa-book"></span></a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
